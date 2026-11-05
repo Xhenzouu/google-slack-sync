@@ -36,6 +36,9 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-backdrop: var(--backdrop);
+  --color-switch-off: oklch(0.928 0.006 264.53); /* #E5E7EB */
+  --color-switch-off-dark: oklch(0.452 0 0); /* #555555 */
+  --color-switch-thumb: oklch(1 0 0);
 }
 
 /* Light: #F9FAFB bg, #FFFFFF surface, #E5E7EB border, #111827 text */
