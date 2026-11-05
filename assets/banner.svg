@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-label="SyncHealth: a Google Calendar to Slack sync with a monitored OAuth token, reactive refresh, and an alert after three consecutive failures">
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#8a857b"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="320" fill="#1a1918"/>
+  <rect x="0" y="0" width="10" height="320" fill="#2dd4bf"/>
+
+  <!-- Title -->
+  <text x="64" y="138" font-family="Georgia, 'Times New Roman', serif" font-size="60" font-weight="700" fill="#f5f2ec">SyncHealth</text>
+  <text x="64" y="186" font-family="Inter, Arial, sans-serif" font-size="22" fill="#b9b4aa">OAuth 2.0 lifecycle monitoring for a</text>
+  <text x="64" y="216" font-family="Inter, Arial, sans-serif" font-size="22" fill="#b9b4aa">Google Calendar → Slack sync</text>
+  <rect x="64" y="244" width="120" height="4" rx="2" fill="#2dd4bf"/>
+
+  <g font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600">
+    <!-- Pipeline caption -->
+    <text x="850" y="100" text-anchor="middle" font-size="12" font-weight="400" fill="#8a857b">7-step trace: Acquire Lock → Release Lock</text>
+
+    <!-- Calendar node -->
+    <rect x="600" y="124" width="120" height="64" rx="10" fill="#242220" stroke="#5b5750" stroke-width="2"/>
+    <text x="660" y="152" text-anchor="middle" fill="#f5f2ec">Calendar</text>
+    <text x="660" y="171" text-anchor="middle" font-size="12" font-weight="400" fill="#8a857b">events</text>
+
+    <!-- Arrows -->
+    <path d="M720 156 L774 156" stroke="#8a857b" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+    <path d="M920 156 L974 156" stroke="#8a857b" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+
+    <!-- Token node -->
+    <rect x="780" y="124" width="140" height="64" rx="10" fill="#242220" stroke="#2dd4bf" stroke-width="2"/>
+    <text x="850" y="152" text-anchor="middle" fill="#f5f2ec">OAuth Token</text>
+    <text x="850" y="171" text-anchor="middle" font-size="12" font-weight="400" fill="#2dd4bf">reactive refresh</text>
+
+    <!-- Slack node -->
+    <rect x="980" y="124" width="120" height="64" rx="10" fill="#242220" stroke="#5b5750" stroke-width="2"/>
+    <text x="1040" y="152" text-anchor="middle" fill="#f5f2ec">Slack</text>
+    <text x="1040" y="171" text-anchor="middle" font-size="12" font-weight="400" fill="#8a857b">message</text>
+
+    <!-- Link from token to states -->
+    <path d="M850 188 L850 224" stroke="#8a857b" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+
+    <!-- Token states -->
+    <rect x="684" y="232" width="104" height="32" rx="16" fill="#242220" stroke="#34d399" stroke-width="2"/>
+    <text x="736" y="253" text-anchor="middle" font-size="13" fill="#34d399">healthy</text>
+
+    <rect x="798" y="232" width="104" height="32" rx="16" fill="#242220" stroke="#fb923c" stroke-width="2"/>
+    <text x="850" y="253" text-anchor="middle" font-size="13" fill="#fb923c">refreshing</text>
+
+    <rect x="912" y="232" width="104" height="32" rx="16" fill="#242220" stroke="#f87171" stroke-width="2"/>
+    <text x="964" y="253" text-anchor="middle" font-size="13" fill="#f87171">re-auth</text>
+
+    <!-- Alert note -->
+    <text x="850" y="288" text-anchor="middle" font-size="12" font-weight="400" fill="#8a857b">alert after 3 consecutive refresh failures</text>
+  </g>
+</svg>
