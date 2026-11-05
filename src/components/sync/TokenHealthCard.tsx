@@ -40,12 +40,12 @@ export function TokenHealthCard() {
               onClick={() => setSimulateFailure(!s.simulateFailure)}
               className={cn(
                 "relative h-6 w-11 shrink-0 rounded-full transition-colors",
-                s.simulateFailure ? "bg-destructive" : "bg-muted border border-border",
+                s.simulateFailure ? "bg-primary" : "bg-switch-off dark:bg-switch-off-dark",
               )}
             >
               <span
                 className={cn(
-                  "absolute left-0 top-0.5 h-5 w-5 rounded-full bg-card transition-transform",
+                  "absolute left-0 top-0.5 h-5 w-5 rounded-full bg-switch-thumb transition-transform",
                   s.simulateFailure ? "translate-x-[21px]" : "translate-x-0.5",
                 )}
               />
