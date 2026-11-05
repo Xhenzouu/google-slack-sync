@@ -9,7 +9,7 @@ const styles: Record<string, string> = {
 
 export function StatusPill({ status }: { status: string }) {
   return (
-    <span className={cn("inline-flex rounded-full px-2.5 py-0.5 text-xs font-medium", styles[status] ?? styles.skipped)}>
+    <span className={cn("inline-flex rounded-full px-2.5 py-0.5 text-xs font-medium", styles[status] ?? styles["skipped"])}>
       {status === "not_attempted" ? "skipped" : status}
     </span>
   );

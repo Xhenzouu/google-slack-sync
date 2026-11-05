@@ -151,8 +151,8 @@ export async function runSync() {
   await wait(DELAY);
   mark(2, "success");
 
-  const id = CANDIDATES[state.cursor % CANDIDATES.length];
-  const ev = mockEvents[id];
+  const id = CANDIDATES[state.cursor % CANDIDATES.length]!;
+  const ev = mockEvents[id]!;
   const already = state.posted.includes(id);
 
   mark(3, "running");

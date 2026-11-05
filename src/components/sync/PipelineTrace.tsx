@@ -25,7 +25,7 @@ export function PipelineTrace() {
       <h2 className="mb-6 text-xl">Pipeline Trace</h2>
       <ol className="flex items-start overflow-x-auto pb-2">
         {PIPELINE_STEPS.map((name, i) => {
-          const s = steps[i];
+          const s = steps[i] ?? "idle";
           return (
             <li key={name} className="flex min-w-[120px] flex-1 items-start">
               <div className="flex w-full flex-col items-center text-center">
@@ -35,7 +35,7 @@ export function PipelineTrace() {
                     <Icon s={s} />
                     {s === "idle" && i + 1}
                   </div>
-                  <div className={cn("h-0.5 flex-1", i === PIPELINE_STEPS.length - 1 ? "bg-transparent" : steps[i + 1] !== "idle" ? "bg-foreground/40" : "bg-border")} />
+                  <div className={cn("h-0.5 flex-1", i === PIPELINE_STEPS.length - 1 ? "bg-transparent" : (steps[i + 1] ?? "idle") !== "idle" ? "bg-foreground/40" : "bg-border")} />
                 </div>
                 <span className="mt-2 px-1 text-xs font-medium">{name}</span>
                 <span className="text-[11px] capitalize text-muted-foreground">{s}</span>
