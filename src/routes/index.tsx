@@ -28,19 +28,18 @@ function Index() {
   const [selected, setSelected] = useState<AuditRow | null>(null);
   const showAlert = s.token.consecutiveFailures >= 3 && !s.alertDismissed;
   return (
-    <AppShell>
-      {showAlert && (
-        <div role="alert" className="flex items-center justify-between bg-destructive px-6 py-3 pr-36 text-sm font-medium text-destructive-foreground">
+    <AppShell
+      title="Google Calendar → Slack Sync"
+      banner={showAlert && (
+        <div role="alert" className="flex items-center justify-between bg-destructive px-6 py-3 text-sm font-medium text-destructive-foreground">
           OAuth credential requires re-authorization. Alert sent to #alerts.
           <button onClick={dismissAlert} aria-label="Dismiss alert" className="rounded p-1 hover:bg-destructive-foreground/15">
             <X className="h-4 w-4" />
           </button>
         </div>
       )}
+    >
       <main className="flex flex-col gap-6 p-6 lg:p-8">
-        <header className="pr-28">
-          <h1 className="text-3xl">Google Calendar → Slack Sync</h1>
-        </header>
         <TokenHealthCard />
         <PipelineTrace />
         <MeetingRunsTable rows={s.runs} onSelect={setSelected} />

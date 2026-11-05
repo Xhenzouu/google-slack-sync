@@ -24,9 +24,8 @@ function AuditLog() {
   const { runs } = useSyncStore();
   const [selected, setSelected] = useState<AuditRow | null>(null);
   return (
-    <AppShell>
+    <AppShell title="Audit Log">
       <main className="flex flex-col gap-6 p-6 lg:p-8">
-        <h1 className="pr-28 text-3xl">Audit Log</h1>
         <MeetingRunsTable title={`All Runs (${runs.length})`} rows={runs} onSelect={setSelected} />
       </main>
       <AuditDrawer row={selected} onClose={() => setSelected(null)} />

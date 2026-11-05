@@ -33,24 +33,24 @@ export function TokenHealthCard() {
           </div>
         </dl>
         <div className="flex flex-wrap items-center gap-5">
-          <label className="flex cursor-pointer items-center gap-3 text-sm">
+          <label className="flex items-center gap-3 text-sm">
             <button
               role="switch"
               aria-checked={s.simulateFailure}
               onClick={() => setSimulateFailure(!s.simulateFailure)}
               className={cn(
-                "relative h-6 w-11 rounded-full transition-colors",
+                "relative h-6 w-11 shrink-0 rounded-full transition-colors",
                 s.simulateFailure ? "bg-destructive" : "bg-muted border border-border",
               )}
             >
               <span
                 className={cn(
-                  "absolute top-0.5 h-5 w-5 rounded-full bg-card transition-transform",
-                  s.simulateFailure ? "translate-x-[22px]" : "translate-x-0.5",
+                  "absolute left-0 top-0.5 h-5 w-5 rounded-full bg-card transition-transform",
+                  s.simulateFailure ? "translate-x-[21px]" : "translate-x-0.5",
                 )}
               />
             </button>
-            Simulate expired token / refresh failure
+            <span>Simulate expired token / refresh failure</span>
           </label>
           <button
             onClick={runSync}
